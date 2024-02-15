@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Clash Game</title>
+    <!-- DaisyUI CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    <!-- custom bg -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+
+</head>
+
+<body id="particles">
+    <header>
+
+    </header>
+    <main>
+
+        <!--Home Screen -->
+        <section id="home" class="">
+            <div class="top-1/3 w-full absolute flex flex-col space-y-10 items-center justify-center absolute">
+                <div class="content">
+                    <h1 class="text tracking-widest text-8xl text-white font-anton drop-shadow-2xl"
+                        data-text="ALPHABET CLASH">ALPHABET CLASH</h1>
+                </div>
+                <!-- keyboard element -->
+
+                <p class="typewriter text-2xl text-white font-normal">Unleash Your Keyboard Kung Fu : Click on “<span
+                        class="text-red-500 font-bold">Play Now</span>” to Play</p>
+                <div class="btn-container">
+                    <div onclick="play()" id="button1" class="button">Play Now</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Play Ground -->
+        <section id="playground" class="absolute top-10 hidden space-y-9">
+            <div class="flex flex-col items-center w-[1600px] ">
+                <div
+                    class="artboard artboard-horizontal phone-6 border-8 rounded-2xl bg-[#ffffff66] border-[#2F2941] w-[850px] ">
+                    <div class="flex justify-center ">
+                        <p class="bg-[#2F2941] h-[35px] px-6 pb-4 text-white rounded-b-xl">Don't watch keyboard while
+                            playing...</p>
+                    </div>
+                    <div class="flex justify-center items-center h-[250px]">
+                        <p id="expected-word" class="font-poppins text-8xl uppercase font-bold">S</p>
+                    </div>
+                </div>
+            </div>
+            <!-- keyboard -->
+            <div>
+                <div class="flex justify-center gap-4 my-3 w-full">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
+                </div>
+                <div class="flex justify-center gap-4 my-3 w-full">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
+                </div>
+                <div class="flex justify-center gap-4 my-3 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
+                </div>
+            </div>
+            <div class="hidden flex justify-center">
+                <div class="case">
+                    <!-- First row -->
+                    <div id="" class="key" data-key="escape">esc</div>
+                    <div id="" class="key" data-key="1">1</div>
+                    <div id="" class="key" data-key="2">2</div>
+                    <div id="" class="key" data-key="3">3</div>
+                    <div id="" class="key" data-key="4">4</div>
+                    <div id="" class="key" data-key="5">5</div>
+                    <div id="" class="key" data-key="6">6</div>
+                    <div id="" class="key" data-key="7">7</div>
+                    <div id="" class="key" data-key="8">8</div>
+                    <div id="" class="key" data-key="9">9</div>
+                    <div id="" class="key" data-key="0">0</div>
+                    <div id="" class="key" data-key="-">-</div>
+                    <div id="" class="key" data-key="=">=</div>
+                    <div id="" class="key xxl" data-key="backspace"></div>
+                    <div id="" class="key" data-key="help">ins</div>
+                    <div id="" class="key" data-key="home"></div>
+                    <!-- Second row -->
+                    <div class="key large" data-key="tab"></div>
+                    <div id="" class="key" data-key="q"></div>
+                    <div id="" class="key" data-key="q"></div>
+                    <div id="q" class="key" data-key="q"></div>
+                    <div id="w" class="key" data-key="w"></div>
+                    <div id="e" class="key" data-key="e"></div>
+                    <div id="r" class="key" data-key="r"></div>
+                    <div id="t" class="key" data-key="t"></div>
+                    <div id="y" class="key" data-key="y"></div>
+                    <div id="u" class="key" data-key="u"></div>
+                    <div id="i" class="key" data-key="i"></div>
+                    <div id="o" class="key" data-key="o"></div>
+                    <div id="p" class="key" data-key="p"></div>
+                    <div class="key" data-key="["></div>
+                    <div class="key" data-key="]"></div>
+                    <div class="key large" data-key="\"></div>
+                    <div class="key" data-key="delete">del</div>
+                    <div class="key" data-key="end"></div>
+                    <!-- Third row -->
+                    <div class="key xl" data-key="capslock">caps</div>
+                    <div id="a" class="key" data-key="a"></div>
+                    <div id="s" class="key" data-key="s"></div>
+                    <div id="d" class="key" data-key="d"></div>
+                    <div id="f" class="key" data-key="f"></div>
+                    <div id="g" class="key" data-key="g"></div>
+                    <div id="h" class="key" data-key="h"></div>
+                    <div id="j" class="key" data-key="j"></div>
+                    <div id="k" class="key" data-key="k"></div>
+                    <div id="l" class="key" data-key="l"></div>
+                    <div class="key" data-key=";"></div>
+                    <div class="key" data-key="'"></div>
+                    <div class="key xl" data-key="enter">return</div>
+                    <div class="key" data-key="f15">pause</div>
+                    <div class="key" data-key="pageup">pg up</div>
+                    <!-- Fourth row -->
+                    <div class="key xxl" data-key="shiftleft">shift</div>
+                    <div id="z" class="key" data-key="z"></div>
+                    <div id="x" class="key" data-key="x"></div>
+                    <div id="c" class="key" data-key="c"></div>
+                    <div id="v" class="key" data-key="v"></div>
+                    <div id="b" class="key" data-key="b"></div>
+                    <div id="n" class="key" data-key="n"></div>
+                    <div id="m" class="key" data-key="m"></div>
+                    <div class="key" data-key=","></div>
+                    <div class="key" data-key="."></div>
+                    <div class="key" data-key="/"></div>
+                    <div class="key xxl" data-key="shiftright">shift</div>
+                    <div class="key" data-key="arrowup">▲</div>
+                    <div class="key" data-key="pagedown">pg dn</div>
+                    <!-- Fifth row -->
+                    <div class="key medium" data-key="controlleft">ctrl</div>
+                    <div class="key medium" data-key="meta">win</div>
+                    <div class="key medium" data-key="altleft">alt</div>
+                    <div class="key huge" data-key=" "></div>
+                    <div class="key medium" data-key="altright">alt</div>
+                    <div class="key medium" data-key="fn"></div>
+                    <div class="key medium" data-key="controlright">ctrl</div>
+                    <div class="key" data-key="arrowleft">◀</div>
+                    <div class="key" data-key="arrowdown">▼</div>
+                    <div class="key" data-key="arrowright">▶</div>
+                </div>
+            </div>
+
+            <!-- life and score -->
+            <div class="flex justify-around">
+                <button disabled class="flex justify-center items-center button-life ">life
+                    <img src="./images/heart.svg" alt="" class="mr-2">
+                    <span id="current-life">5</span>
+
+                </button>
+                <button disabled class=" flex justify-center items-center button-life ">Score
+                    <img src="./images/dollar.svg" alt="" class="mr-2">
+                    <span id="current-score" class="">0</span>
+
+                </button>
+            </div>
+        </section>
+
+        <!-- Final Score -->
+        <section id="final-score" class="absolute top-10 hidden">
+            <div class="flex justify-center items-center w-[1600px] h-[700px]">
+                <div
+                    class="space-y-4 button-life3 flex flex-col text-center bg-cover w-[600px] h-[270px] justify-center items-center text-black">
+                    <p class="text-5xl">Score : <span id="final-result">15</span></p>
+                    <button onclick="play2()" id="playagain" class="button-life2">Play Again</button>
+                    <p>Practice will make you Pro</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./scripts/alphaGame.js"></script>
+    <script src="./scripts/utility.js"></script>
+    <script src="./scripts/keyboard.js"></script>
+    <script src="./scripts/custombg.js"></script>
+</body>
+
+</html>
